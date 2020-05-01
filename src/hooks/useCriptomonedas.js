@@ -20,10 +20,10 @@ const Select = styled.select`
      font-size: 1.2rem;
 `;
 
-const useMoneda = (label, stateInicial, opciones) => {
+const useCriptomoneda = (label, stateInicial, opciones) => {
     const [state, actualizarState] = useState(stateInicial);
 
-    const Seleccionar = () => ( 
+    const SelectCripto = () => ( 
        <>
         <Label htmlFor="">{label}</Label>
         <Select
@@ -31,15 +31,15 @@ const useMoneda = (label, stateInicial, opciones) => {
           value = {state}
         >
           <option value="" >--- Seleccione ---</option>
-           {opciones.map(opcion =>(
+           {/*opciones.map(opcion =>(
              <option key={opcion.codigo} value={opcion.codigo} >{opcion.nombre}</option>
-           ))}
+           ))*/}
         </Select>
        </> 
     );
 
-    return [state, Seleccionar, actualizarState];
+    return [state, SelectCripto, actualizarState];
 
 }
  
-export default useMoneda;
+export default useCriptomoneda;
